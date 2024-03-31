@@ -35,6 +35,8 @@ listharga = {
              'Sabtu': '45.000',
              'Minggu': '50.000'}
 }
+listnama = []
+listumur = []
 
 print("Daftar Genre Film")
 for genre in listfilm:
@@ -68,6 +70,8 @@ if pilih_genre in listfilm:
                 for tiket in range (jumlah_tiket):
                     masukan_nama = input("Masukan Nama Anda : ")
                     masukan_umur = int( input("Masukan Umur Anda : "))
+                    listnama.append (masukan_nama)
+                    listumur.append (masukan_umur)
                 for x in range (jumlah_tiket):
                     if masukan_umur >=18 :
                         print("Anda Diperbolehkan Nonton")  
@@ -75,14 +79,14 @@ if pilih_genre in listfilm:
                         print("Anda Tidak Diperbolehkan Nonton") 
                 
                     for pengguna in range(jumlah_tiket):
-                        print("\nInformasi Tiket : ")
-                        print("Nama Anda    : ",masukan_nama)
-                        print("Umur Anda    : ",masukan_umur)
+                        print("\nInformasi Tiket")
+                        print("Nama Anda    : ",listnama[pengguna])
+                        print("Umur Anda    : ",listumur[pengguna])
                         print("Genre        : ",pilih_genre)
                         print("Film         : ",judul_film_dipilih)
                         print(f"Price        :  Rp {listharga['Hari'][pilih_hari]}")
                         print("Waktu        : ",pilih_hari,(","),waktu_film_dipilih)
-                        print("Terimakasih",masukan_nama,"Sudah Membeli Tiket",judul_film_dipilih)
+                        print("Terimakasih",listnama[pengguna],"Sudah Membeli Tiket",judul_film_dipilih)
             
             break
     else:
